@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <div>
+        <h2>Products</h2>
+        <ul>
+            {% for product in products %}
+            <li>
+                <a href="{% url 'product_details' product.pk %}">
+
+                    <h2>{{product.title}}</h2>
+                </a>
+                {% empty %}
+            <li>Sorry, no products availeble.</li>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
