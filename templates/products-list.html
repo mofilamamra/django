@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    It is {% now "jS F Y H:i" %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
@@ -12,16 +11,10 @@
     <div>
         <h2>Products</h2>
         <ul>
-
             {% for product in products %}
             <li>
-                {{ value|linenumbers }}
-                <a href="{% url 'product_details' product.pk %}">
-
-                    <h2>{{product.title}}</h2>
-                </a>
-                {% empty %}
-            <li>Sorry, no products availeble.</li>
+                <div>{{product.title}}</div>
+                <div>{{product.description}}</div>
             </li>
             {% endfor %}
         </ul>
