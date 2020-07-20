@@ -15,13 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
 from products.views import say_hi
 from products.views import show_time
 
+
+def home(request):
+    return redirect('products_list')
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('say-hi/<str:name>', say_hi),
-    path('show-time/', show_time),
+    path('', home, name='home'),
     path('', include('products.urls')),
-
-]
+    path('accounts/', include('accounts.urls')),
+    path('say-hi/<str:name>', say_hi),
+    path('show-time/', show_time)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
