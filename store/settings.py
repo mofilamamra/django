@@ -68,7 +68,7 @@ TEMPLATES = [
         },
     },
 ]
-#ALLOWED_HOSTS = ['.herokuapp.com', ]
+ALLOWED_HOSTS = ['.herokuapp.com', ]
 
 WSGI_APPLICATION = 'store.wsgi.application'
 
