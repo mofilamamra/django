@@ -31,6 +31,8 @@ urlpatterns = [
     path('', home, name='home'),
     path('', include('products.urls')),
     path('accounts/', include('accounts.urls')),
+    path('cart/', include('carts.urls')),
     path('say-hi/<str:name>', say_hi),
     path('show-time/', show_time)
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
