@@ -14,10 +14,11 @@
             <h2>
                 {{ product.title | capfirst }}
             </h2>
-
+            <a href="{% url 'remove_from_cart' product_id=product.id %}">
+                Remove from cart
+            </a>
 
         </li>
-
     </div>
 
     {% empty %}
@@ -29,6 +30,7 @@
     {% endfor %}
 
 </ul>
+<a class="clear" href="{% url 'remove_all_from_cart' %}">Clear cart</a>
 
 
 
