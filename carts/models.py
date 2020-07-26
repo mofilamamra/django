@@ -16,6 +16,12 @@ class Cart(models.Model):
 
     update_at = models.DateTimeField(auto_now=True)
 
+    def total_price(self):
+        total = 0
+        for item in self.items.all():
+            total += item.price
+        return total
+
     def __str__(self):
         return str(self.user)
 

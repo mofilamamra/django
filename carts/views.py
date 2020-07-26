@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-
 from .models import Cart
 from products.models import Product
 # Create your views here.
@@ -40,4 +39,5 @@ def remove_all_from_cart(request):
 def cart(request):
     user = request.user
     products = user.cart.items.all()
-    return render(request, 'carts/cart.html', {'products': products})
+    total_price = user.cart.total_price()
+    return render(request, 'carts/cart.html', {'products': products, 'total_price': total_price})

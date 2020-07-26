@@ -32,6 +32,7 @@ urlpatterns = [
     path('', include('products.urls')),
     path('accounts/', include('accounts.urls')),
     path('cart/', include('carts.urls')),
+    path('orders/', include('orders.urls')),
     path('say-hi/<str:name>', say_hi),
     path('show-time/', show_time)
 
