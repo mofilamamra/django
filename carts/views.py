@@ -41,3 +41,11 @@ def cart(request):
     products = user.cart.items.all()
     total_price = user.cart.total_price()
     return render(request, 'carts/cart.html', {'products': products, 'total_price': total_price})
+
+
+# login_required
+# def clear_cart(request):
+#   cart = Cart.objects.get(user=request.user)
+#   cart.items.clear()
+#
+#   return redirect('cart')
