@@ -15,7 +15,7 @@ DEBUG = True
 #    DEBUG = False
 
 #ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(';')
-ALLOWED_HOSTS = ['morning-depths-38898.herokuapp.com']
+ALLOWED_HOSTS = ['still-plateau-17088.herokuapp.com']
 # Database
 DATABASES = {
     'default': dj_database_url.config(
