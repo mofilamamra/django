@@ -11,7 +11,7 @@ def order(request):
     user = request.user
 
     if not user.cart.items.exists():
-        return redirect('product_list')
+        return redirect('products_list')
 
     if request.method == 'POST':
         form = OrderForm(request.POST, request.FILES)
